@@ -59,6 +59,34 @@ Upcoming changes</a>
   <li class=>
 </ul>
 </div><!--=TRUNK-END=-->
+<h3><a name=v2.19>What's new in 2.19</a> (2016/08/21)</h3>
+<ul class=image>
+  <li class="major bug">
+    Prevent File descriptor leaks when reading plugin manifests.
+    It causes failures during the upgrade of detached plugins on Windows.
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37332">issue 37332</a>, regression in 2.16)
+  <li class="bug">
+    Prevent resource leaks in <code>AntClassLoader</code> being used in the core.
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37561">issue 37561</a>)
+  <li class="bug">
+    Fix the wrong message about empty field in the case duplicate item name in the New Item dialog.
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-34532">issue 34532</a>)
+  <li class="rfe">
+    Allow invoking Upgrade Wizard when Jenkins starts up.
+    It can be done by placing an empty <code>jenkins.install.InstallUtil.lastExecVersion</code> file 
+    in <code>JENKINS_HOME</code>.
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37438">issue 37438</a>)
+  <li class="rfe">
+    Replace repetitious &quot;website&quot; and &quot;dependencies&quot; text in the Setup Wizard by icons.
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37523">issue 37523</a>)
+  <li class="rfe">
+    Expose Job name to system logs when Jenkins fails to create a new build with <code>IllegalStateException</code>.
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-33549">issue 33549</a>)
+  <li class="rfe">
+    Downgrade <code>Queue#maintain()</code> message for dead executors during task mapping 
+    from <code>INFO</code> to <code>FINE</code>.
+    (<a href="https://github.com/jenkinsci/jenkins/pull/2510">PR #2510</a>)
+</ul>
 <h3><a name=v2.18>What's new in 2.18</a> (2016/08/15)</h3>
 <ul class=image>
   <li class="rfe">
@@ -94,6 +122,18 @@ Upcoming changes</a>
   <li class="rfe">
     Remoting 2.61: Improve diagnostics of Local Jar Cache write errors.
     (<a href="https://github.com/jenkinsci/remoting/pull/91">remoting PR #91</a>)
+  <li class="bug">
+    Remoting 2.62: Be robust against the delayed EOF command when unexporting input and output streams. 
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-22853">issue 22853</a>)
+  <li class="bug">
+    Remoting 2.62: Cleanup of minor issues discovered by FindBugs. 
+    (<a href="https://github.com/jenkinsci/remoting/pull/96">remoting PR #96</a>)
+  <li class="rfe">
+    Remoting 2.62: Improve class filtering performance in remote invocations. 
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37218">issue 37218</a>)
+  <li class="rfe">
+    Remoting 2.62: TCP agent connection listener now publishes a list of supported agent protocols to speed up the connection setup. 
+    (<a href="https://issues.jenkins-ci.org/browse/JENKINS-37031">issue 37031</a>)
   <li class="rfe">
     Improve German, Lithuanian and Bulgarian translations. 
     (<a href="https://github.com/jenkinsci/jenkins/pull/2473">PR #2473</a>,
